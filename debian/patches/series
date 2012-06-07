@@ -72,6 +72,10 @@ opt-50_graphtft-liemikuutio.patch
 
 opt-55_wareagleicon.patch
 opt-56_eventdetails_v3.patch
+
+# needed for remotetimers patch
+vdr-1.7.28-compatibility.patch
+
 opt-57_vdr-remote_instant_recordings.patch
 opt-61_dynamite.patch
 
