@@ -83,3 +83,4 @@ opt-66_jumpingseconds.patch
 
 xprmtl-01_externalci.patch
 fix-no-hddvbdevice-segfault.patch
+vdr-1.7.28-epghandledexternally.patch
