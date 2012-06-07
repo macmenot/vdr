@@ -9,6 +9,7 @@ vdr (1.7.28-0yavdr0~precise) precise; urgency=medium
     dvbhddevice plugin is installed but no full featured HD DVB card is
     available
   * Updated patches, dropped opt-43-x_recordshowfree.patch
+  * Added gcc fix
  
  -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 07 Jun 2012 08:09:25 +0200
 
