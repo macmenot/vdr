@@ -55,10 +55,6 @@ opt-41-x_timer-info.patch
 #opt-42-x_MainMenuHooks.patch
 opt-42-x_MainMenuHooks-v1.0.1.patch
 
-# Shows remaining recording capacity in recordings menu.
-# (Requires opt-41-x_timer-info !)
-#opt-43-x_recordshowfree.patch
-
 # Patch needed for the rotor plugin.
 #opt-44_rotor.patch
 
