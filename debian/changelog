@@ -4,6 +4,7 @@ vdr (1.7.28-0yavdr0~precise) precise; urgency=medium
   [Tobi]
   * Updated documentation about the originial recording now passed as 3'rd
     argument to the "edited" action of the recording hooks
+  * Fixed passing parameters to recording hooks
  
  -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 07 Jun 2012 08:09:25 +0200
 
