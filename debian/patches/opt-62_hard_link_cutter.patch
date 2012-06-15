@@ -4,8 +4,8 @@ Origin: http://www.udo-richter.de/vdr/patches.html#hlcutter
 
 Index: vdr-1.7.28/config.c
 ===================================================================
---- vdr-1.7.28.orig/config.c	2012-06-05 20:45:31.611116705 +0200
-+++ vdr-1.7.28/config.c	2012-06-05 20:45:31.699116709 +0200
+--- vdr-1.7.28.orig/config.c	2012-06-15 10:26:25.147001752 +0200
++++ vdr-1.7.28/config.c	2012-06-15 10:31:08.287013490 +0200
 @@ -447,8 +447,10 @@
    FontSmlSize = 18;
    FontFixSize = 20;
@@ -41,8 +41,8 @@ Index: vdr-1.7.28/config.c
    Store("NextWakeupTime",     NextWakeupTime);
 Index: vdr-1.7.28/config.h
 ===================================================================
---- vdr-1.7.28.orig/config.h	2012-06-05 20:45:31.671116707 +0200
-+++ vdr-1.7.28/config.h	2012-06-05 20:45:31.703116709 +0200
+--- vdr-1.7.28.orig/config.h	2012-06-15 10:29:07.807008495 +0200
++++ vdr-1.7.28/config.h	2012-06-15 10:31:08.287013490 +0200
 @@ -320,8 +320,10 @@
    int FontSmlSize;
    int FontFixSize;
@@ -56,8 +56,8 @@ Index: vdr-1.7.28/config.h
    int MultiSpeedMode;
 Index: vdr-1.7.28/cutter.c
 ===================================================================
---- vdr-1.7.28.orig/cutter.c	2012-06-05 20:45:31.151116686 +0200
-+++ vdr-1.7.28/cutter.c	2012-06-05 20:45:31.703116709 +0200
+--- vdr-1.7.28.orig/cutter.c	2012-06-15 10:26:24.683001732 +0200
++++ vdr-1.7.28/cutter.c	2012-06-15 10:31:08.287013490 +0200
 @@ -81,6 +81,7 @@
       Mark = fromMarks.Next(Mark);
       off_t FileSize = 0;
@@ -216,9 +216,9 @@ Index: vdr-1.7.28/cutter.c
       Recordings.TouchUpdate();
 Index: vdr-1.7.28/menu.c
 ===================================================================
---- vdr-1.7.28.orig/menu.c	2012-06-05 20:45:31.675116707 +0200
-+++ vdr-1.7.28/menu.c	2012-06-05 20:45:31.703116709 +0200
-@@ -3441,8 +3441,10 @@
+--- vdr-1.7.28.orig/menu.c	2012-06-15 10:30:17.275011374 +0200
++++ vdr-1.7.28/menu.c	2012-06-15 10:31:08.291013490 +0200
+@@ -3442,8 +3442,10 @@
    Add(new cMenuEditStrItem( tr("Setup.Recording$Name instant recording"),     data.NameInstantRecord, sizeof(data.NameInstantRecord)));
    Add(new cMenuEditIntItem( tr("Setup.Recording$Instant rec. time (min)"),   &data.InstantRecordTime, 1, MAXINSTANTRECTIME));
    Add(new cMenuEditIntItem( tr("Setup.Recording$Max. video file size (MB)"), &data.MaxVideoFileSize, MINVIDEOFILESIZE, MAXVIDEOFILESIZETS));
@@ -232,7 +232,7 @@ Index: vdr-1.7.28/menu.c
 Index: vdr-1.7.28/README-HLCUTTER
 ===================================================================
 --- /dev/null	1970-01-01 00:00:00.000000000 +0000
-+++ vdr-1.7.28/README-HLCUTTER	2012-06-05 20:48:37.847124427 +0200
++++ vdr-1.7.28/README-HLCUTTER	2012-06-15 10:31:08.291013490 +0200
 @@ -0,0 +1,117 @@
 +
 +                    VDR-HLCUTTER README
@@ -354,7 +354,7 @@ Index: vdr-1.7.28/README-HLCUTTER
 Index: vdr-1.7.28/recorder.c
 ===================================================================
 --- vdr-1.7.28.orig/recorder.c	2011-09-04 11:26:44.000000000 +0200
-+++ vdr-1.7.28/recorder.c	2012-06-05 20:45:31.707116708 +0200
++++ vdr-1.7.28/recorder.c	2012-06-15 10:31:08.291013490 +0200
 @@ -89,7 +89,7 @@
  bool cRecorder::NextFile(void)
  {
@@ -366,8 +366,8 @@ Index: vdr-1.7.28/recorder.c
          }
 Index: vdr-1.7.28/recording.c
 ===================================================================
---- vdr-1.7.28.orig/recording.c	2012-06-05 20:45:31.619116704 +0200
-+++ vdr-1.7.28/recording.c	2012-06-05 20:45:31.707116708 +0200
+--- vdr-1.7.28.orig/recording.c	2012-06-15 10:26:25.151001752 +0200
++++ vdr-1.7.28/recording.c	2012-06-15 10:31:08.291013490 +0200
 @@ -2090,6 +2090,20 @@
    return NULL;
  }
@@ -391,8 +391,8 @@ Index: vdr-1.7.28/recording.c
    return SetOffset(fileNumber + 1);
 Index: vdr-1.7.28/recording.h
 ===================================================================
---- vdr-1.7.28.orig/recording.h	2012-06-05 20:45:31.559116703 +0200
-+++ vdr-1.7.28/recording.h	2012-06-05 20:45:31.707116708 +0200
+--- vdr-1.7.28.orig/recording.h	2012-06-15 10:26:25.091001749 +0200
++++ vdr-1.7.28/recording.h	2012-06-15 10:31:08.291013490 +0200
 @@ -260,9 +260,17 @@
  // before the next independent frame, to have a complete Group Of Pictures):
  #define MAXVIDEOFILESIZETS  1048570 // MB
@@ -423,8 +423,8 @@ Index: vdr-1.7.28/recording.h
  
 Index: vdr-1.7.28/videodir.c
 ===================================================================
---- vdr-1.7.28.orig/videodir.c	2012-06-05 20:45:31.163116686 +0200
-+++ vdr-1.7.28/videodir.c	2012-06-05 20:45:31.707116708 +0200
+--- vdr-1.7.28.orig/videodir.c	2012-06-15 10:26:24.695001733 +0200
++++ vdr-1.7.28/videodir.c	2012-06-15 10:31:08.291013490 +0200
 @@ -19,6 +19,9 @@
  #include "recording.h"
  #include "tools.h"
@@ -558,8 +558,8 @@ Index: vdr-1.7.28/videodir.c
    cVideoDirectory Dir;
 Index: vdr-1.7.28/videodir.h
 ===================================================================
---- vdr-1.7.28.orig/videodir.h	2012-06-05 20:45:31.163116686 +0200
-+++ vdr-1.7.28/videodir.h	2012-06-05 20:45:31.707116708 +0200
+--- vdr-1.7.28.orig/videodir.h	2012-06-15 10:26:24.695001733 +0200
++++ vdr-1.7.28/videodir.h	2012-06-15 10:31:08.291013490 +0200
 @@ -19,6 +19,7 @@
  int CloseVideoFile(cUnbufferedFile *File);
  bool RenameVideoFile(const char *OldName, const char *NewName);

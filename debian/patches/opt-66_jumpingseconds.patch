@@ -1,7 +1,7 @@
 Index: vdr-1.7.28/config.c
 ===================================================================
---- vdr-1.7.28.orig/config.c	2012-06-05 20:45:31.735116710 +0200
-+++ vdr-1.7.28/config.c	2012-06-05 20:45:31.775116711 +0200
+--- vdr-1.7.28.orig/config.c	2012-06-15 10:31:08.319013491 +0200
++++ vdr-1.7.28/config.c	2012-06-15 10:31:08.387013494 +0200
 @@ -470,6 +470,8 @@
    InitialVolume = -1;
    ChannelsWrap = 0;
@@ -31,8 +31,8 @@ Index: vdr-1.7.28/config.c
  
 Index: vdr-1.7.28/config.h
 ===================================================================
---- vdr-1.7.28.orig/config.h	2012-06-05 20:45:31.739116710 +0200
-+++ vdr-1.7.28/config.h	2012-06-05 20:45:31.775116711 +0200
+--- vdr-1.7.28.orig/config.h	2012-06-15 10:31:08.319013491 +0200
++++ vdr-1.7.28/config.h	2012-06-15 10:31:08.387013494 +0200
 @@ -340,6 +340,8 @@
    int InitialVolume;
    int ChannelsWrap;
@@ -44,9 +44,9 @@ Index: vdr-1.7.28/config.h
    cString DeviceBondings;
 Index: vdr-1.7.28/menu.c
 ===================================================================
---- vdr-1.7.28.orig/menu.c	2012-06-05 20:45:31.755116711 +0200
-+++ vdr-1.7.28/menu.c	2012-06-05 20:45:31.779116712 +0200
-@@ -3483,6 +3483,8 @@
+--- vdr-1.7.28.orig/menu.c	2012-06-15 10:31:08.355013492 +0200
++++ vdr-1.7.28/menu.c	2012-06-15 10:31:08.387013494 +0200
+@@ -3484,6 +3484,8 @@
    Add(new cMenuEditBoolItem(tr("Setup.Replay$Jump&Play"), &data.JumpPlay));
    Add(new cMenuEditBoolItem(tr("Setup.Replay$Play&Jump"), &data.PlayJump));
    Add(new cMenuEditBoolItem(tr("Setup.Replay$Pause at last mark"), &data.PauseLastMark));
@@ -55,7 +55,7 @@ Index: vdr-1.7.28/menu.c
  }
  
  void cMenuSetupReplay::Store(void)
-@@ -5408,9 +5410,9 @@
+@@ -5409,9 +5411,9 @@
      case kRight:   Forward(); break;
      case kRed:     TimeSearch(); break;
      case kGreen|k_Repeat:
@@ -67,7 +67,7 @@ Index: vdr-1.7.28/menu.c
      case kPrev|k_Repeat:
      case kPrev:    if (lastSkipTimeout.TimedOut()) {
                        lastSkipSeconds = REPLAYCONTROLSKIPSECONDS;
-@@ -5457,7 +5459,7 @@
+@@ -5458,7 +5460,7 @@
                                    marks.Save();
                                    }
                                 else
@@ -76,7 +76,7 @@ Index: vdr-1.7.28/menu.c
                                 break;
          case k3|k_Repeat:
          case k3:               if (GetReplayMode(play, forward, speed) && !play && GetIndex(Current, Total) && (m = marks.Get(Current)) != NULL) {
-@@ -5470,7 +5472,7 @@
+@@ -5471,7 +5473,7 @@
                                    marks.Save();
                                    }
                                 else
